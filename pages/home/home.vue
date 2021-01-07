@@ -133,7 +133,7 @@ swiper {
   }
   .floor-img-box {
     display: flex;
-    padding-left: 10rpx;
+    padding-left: 15rpx;
   }
   .right-img-box {
     display: flex;
