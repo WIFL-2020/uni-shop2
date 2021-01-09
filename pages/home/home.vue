@@ -1,5 +1,9 @@
 <template>
 	<view>
+    <!-- 搜索框组件 -->
+    <view class="search-box">
+      <my-search @click="gotoSearch"></my-search>
+    </view>
     <!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
       <!-- 循环渲染轮播图的 item 项 -->
@@ -103,6 +107,11 @@
           })
         })
         this.floorList = res.message
+      },
+      gotoSearch() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
+        })
       }
     }
 	}
@@ -139,5 +148,11 @@ swiper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  .search-box {
+    // 粘性定位 达到吸顶效果
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 </style>
